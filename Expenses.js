@@ -15,7 +15,7 @@ function printReport(expenses) {
             mealExpenses += expense.amount;
         }
 
-        const expenseName;
+        let expenseName;
         switch (expense.type) {
         case type.DINNER:
             expenseName = "Dinner";
@@ -28,7 +28,7 @@ function printReport(expenses) {
             break;
         }
 
-        const mealOverExpensesMarker = ((expense.type == type.DINNER && expense.amount > 5000) || (expense.type == type.BREAKFAST && expense.amount > 1000)) = "X" : " ";
+        const mealOverExpensesMarker = ((expense.type == type.DINNER && expense.amount > 5000) || (expense.type == type.BREAKFAST && expense.amount > 1000)) ? "X" : " ";
 
         process.stdout.write(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
         total += expense.amount;
